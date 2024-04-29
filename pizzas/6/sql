@@ -1,0 +1,6 @@
+SELECT AVG(cnt) AS average_customers_per_day
+FROM (
+    SELECT COUNT(DISTINCT order_id) AS cnt
+    FROM orders
+    GROUP BY date
+) AS subquery;
