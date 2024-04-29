@@ -1,7 +1,4 @@
-SELECT AVG(quantity) AS average_pizzas_per_order
-FROM order_details
-WHERE order_id IN (
-    SELECT order_id
+    SELECT AVG(quantity) AS average_pizzas_per_order
     FROM orders
-    WHERE date BETWEEN '2023-09-01' AND '2023-11-30'
-);
+    JOIN order_details ON orders.order_id = order_details.order_id
+    WHERE orders.date BETWEEN '2015-09-01' AND '2015-11-30';
