@@ -1,0 +1,22 @@
+Table: orders
+- order_id (INTEGER, PRIMARY KEY)
+- date (TEXT)
+- time (TEXT)
+
+Table: order_details
+- order_details_id (INTEGER, PRIMARY KEY)
+- order_id (INTEGER, FOREIGN KEY references orders(order_id))
+- pizza_id (INTEGER, FOREIGN KEY references pizzas(pizza_id))
+- quantity (INTEGER)
+
+Table: pizzas
+- pizza_id (INTEGER, PRIMARY KEY)
+- pizza_type_id (INTEGER, FOREIGN KEY references pizza_types(pizza_type_id))
+- size (TEXT)
+- price (REAL)
+
+Table: pizza_types
+- pizza_type_id (INTEGER, PRIMARY KEY)
+- name (TEXT)
+- category (TEXT)
+- ingredients (TEXT)
